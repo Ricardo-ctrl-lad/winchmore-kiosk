@@ -1,5 +1,6 @@
 :root {
   --text: #ffffff;
+  --background: #031a3a;
 }
 
 * {
@@ -20,20 +21,25 @@ body {
                Arial, Helvetica, sans-serif;
 
   color: var(--text);
+  background-color: var(--background);
 
-  /* Background */
-  background-color: #031a3a;
-  background-image: url("./WinchmoreSchool_BG.png?v=2");
+  /*
+    "contain" shows the COMPLETE background image.
+    This avoids cropping the top-right corner on the
+    iPad Air 2's 4:3 landscape screen.
+  */
+  background-image: url("./WinchmoreSchool_BG.png?v=3");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
 
   -webkit-user-select: none;
   user-select: none;
+
   -webkit-touch-callout: none;
 }
 
-/* Full screen container */
+/* Full-screen kiosk area */
 .kiosk {
   width: 100%;
   height: 100vh;
@@ -45,7 +51,7 @@ body {
   text-align: center;
 }
 
-/* Clock/date/welcome block */
+/* Clock/date/welcome container */
 .display {
   width: 100%;
   max-width: 900px;
@@ -57,18 +63,23 @@ body {
 
   text-align: center;
 
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.4);
 }
 
+/* Main clock */
 .clock {
   font-size: 130px;
   font-weight: 300;
+
   line-height: 1;
 
   letter-spacing: 3px;
+
   font-variant-numeric: tabular-nums;
 }
 
+/* Current date */
 .date {
   margin-top: 18px;
 
@@ -78,22 +89,33 @@ body {
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Divider below date */
 .divider {
   width: 110px;
   height: 2px;
 
   margin: 35px auto;
 
-  background: rgba(255, 255, 255, 0.45);
+  background-color:
+    rgba(255, 255, 255, 0.45);
 }
 
+/* Welcome message */
 .welcome {
   font-size: 36px;
   font-weight: 600;
+
+  line-height: 1.25;
 }
 
-/* iPad Air 2 landscape */
+/*
+  iPad Air 2 / smaller landscape displays
+*/
 @media screen and (max-width: 1100px) {
+
+  .display {
+    max-width: 760px;
+  }
 
   .clock {
     font-size: 110px;
@@ -103,7 +125,29 @@ body {
     font-size: 26px;
   }
 
+  .divider {
+    margin: 30px auto;
+  }
+
   .welcome {
     font-size: 32px;
+  }
+}
+
+/*
+  Extra fallback for smaller screens
+*/
+@media screen and (max-width: 800px) {
+
+  .clock {
+    font-size: 90px;
+  }
+
+  .date {
+    font-size: 22px;
+  }
+
+  .welcome {
+    font-size: 27px;
   }
 }
