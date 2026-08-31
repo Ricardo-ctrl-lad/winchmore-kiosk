@@ -9,8 +9,6 @@ The dashboard currently displays:
 - Current date
 - Welcome message
 
-The project is intentionally lightweight and can be hosted using GitHub Pages.
-
 ## Project Structure
 
 ```text
