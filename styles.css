@@ -31,7 +31,7 @@ body {
   background-image: url("./WinchmoreSchool_BG_ipad.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
+  background-size: cover;
 
   -webkit-user-select: none;
   user-select: none;
