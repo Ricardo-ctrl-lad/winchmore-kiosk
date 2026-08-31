@@ -28,7 +28,7 @@ body {
     This avoids cropping the top-right corner on the
     iPad Air 2's 4:3 landscape screen.
   */
-  background-image: url("./WinchmoreSchool_BG.png?v=3");
+  background-image: url("./WinchmoreSchool_BG_ipad.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
